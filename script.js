@@ -1,13 +1,15 @@
 const taskInput = document.getElementById("inputTask");
 const btnAddTask = document.getElementById("btnAddTask");
 const liste = document.getElementById("liste");
+
 let taskId = 0;
+
 const fetchData = (ms) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       let task1 = { id: 0, name: "Walk a dog", status: false };
       let task2 = { id: 1, name: "Wash the dishes", status: false };
-      let task3 = { id: 2, name: "Homework", status: false };
+      let task3 = { id: 2, name: "Homework", status: true };
       let taskList = [task1, task2, task3]; // tableau avec des taches
       resolve(taskList);
     }, ms);
@@ -49,6 +51,7 @@ btnAddTask.addEventListener("click", (event) => {
     });
     localStorage.setItem("tasks", JSON.stringify(taskLocalStorage));
   }
+
   chercherTaches(); //recharge du liste avec nouveau element
 });
 
@@ -70,10 +73,12 @@ function afficherTache(tache) {
   const taskName = document.createElement("p");
   const taskStatus = document.createElement("button");
   const deleteButton = document.createElement("button");
+
   let status = "";
   li.appendChild(taskName);
   li.appendChild(taskStatus);
   li.appendChild(deleteButton);
+
   if (tache.status === false) {
     status = "Complete";
     taskStatus.classList.add("success");
@@ -125,10 +130,12 @@ function afficherTache(tache) {
     const newTaches = taches.filter((item) => item.id != index);
     localStorage.setItem("tasks", JSON.stringify(newTaches));
     chercherTaches();
+
   });
 }
 
 async function showContent() {
+
   const tasks = chercherTaches();
   console.log(tasks);
   if (tasks.length == 0) {
@@ -142,3 +149,4 @@ async function showContent() {
 }
 
 showContent(); // Affiche les tâches lors du chargement de la page.
+
