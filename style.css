@@ -36,3 +36,7 @@ li {
     color: red;
     margin-top: 10px;
 }
+
+.success { background-color: greenyellow; }
+
+.cancel { background-color:red; }
