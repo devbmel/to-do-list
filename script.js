@@ -1,6 +1,7 @@
 const taskInput = document.getElementById("inputTask");
 const btnAddTask = document.getElementById("btnAddTask");
 const liste = document.getElementById("liste");
+const btnDeleteFinished = document.getElementById("btnDeleteFinished");
 
 const fetchData = (ms) => {
   return new Promise((resolve) => {
@@ -23,7 +24,7 @@ const saveTasksToLocal = async () => {
 saveTasksToLocal(); //charger data si besoin
 
 btnAddTask.addEventListener("click", (event) => {
-  event.preventDefault();
+  event.preventDefault(); //prevent recharge du page
   let taskLocalStorage = [];
   const getTasksLocalStorage = JSON.parse(localStorage.getItem("tasks"));
   if (getTasksLocalStorage) {
