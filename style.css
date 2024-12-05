@@ -1,38 +1,44 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+  font-family: Arial, sans-serif;
+  margin: 20px;
 }
 
 input,
 button {
-    font-size: 20px;
-    padding: 10px;
-    margin: 5px;
+  font-size: 20px;
+  padding: 10px;
+  margin: 5px;
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 li {
-    display: flex;
-    /* Active Flexbox pour l'élément li */
-    justify-content: space-between;
-    /* Répartit l'espace entre les enfants */
-    align-items: center;
-    /* Centre les éléments verticalement */
-    width: 100%;
-    /* Assure que le li occupe toute la largeur disponible */
-    padding: 10px;
-    margin: 8px 0;
-    background-color: #f0f0f0;
-    cursor: pointer;
+  display: flex;
+  /* Active Flexbox pour l'élément li */
+  justify-content: space-between;
+  /* Répartit l'espace entre les enfants */
+  align-items: center;
+  /* Centre les éléments verticalement */
+  width: 100%;
+  /* Assure que le li occupe toute la largeur disponible */
+  padding: 10px;
+  margin: 8px 0;
+  background-color: #f0f0f0;
+  cursor: pointer;
 }
 
-
-
 #error {
-    color: red;
-    margin-top: 10px;
+  color: red;
+  margin-top: 10px;
+}
+
+.success {
+  background-color: greenyellow;
+}
+
+.cancel {
+  background-color: red;
 }
