@@ -2,7 +2,7 @@ const taskInput = document.getElementById("inputTask");
 const btnAddTask = document.getElementById("btnAddTask");
 const liste = document.getElementById("liste");
 
-let taskId = 0;
+let currentTaskID = 0;
 
 const fetchData = (ms) => {
   return new Promise((resolve) => {
@@ -16,16 +16,16 @@ const fetchData = (ms) => {
   });
 }; // function de simulation un delay de requet
 
-function setTaskID() {
-  tasks = JSON.parse(localStorage.getItem("tasks"));
+function setcurrentTaskID() {
+   let tasks = JSON.parse(localStorage.getItem("tasks"));
   if (tasks.length > 0) {
-    taskId = tasks[tasks.length - 1].id;
+    currentTaskID = tasks[tasks.length - 1].id;
   } else {
-    taskId = 2;
+    currentTaskID = 2;
   }
 }
 
-setTaskID();
+setcurrentTaskID();
 
 const saveTasksToLocal = async () => {
   const fetchedData = await fetchData(2000);
@@ -43,9 +43,9 @@ btnAddTask.addEventListener("click", (event) => {
 
   if (taskInput.value) {
     // vérifie si l'input n'est pas vide et interdit l'ajout si c'est le cas
-    taskId += 1;
+     let currentcurrentTaskID += 1;
     taskLocalStorage.push({
-      id: taskId,
+      id: currentcurrentTaskID,
       name: taskInput.value,
       status: false,
     });
